@@ -9,20 +9,22 @@ import { LogoutButton } from './LogoutButton'
 import { MenuItem } from './MenuItem'
 import { MENU } from './menu.data'
 
+import s from './Sidebar.module.scss'
+
 export function Sidebar() {
 	return (
-		<aside className='border-r border-r-border h-full bg-sidebar flex flex-col justify-between'>
+		<aside className={s.aside}>
 			<div>
 				<Link
 					href='/'
-					className='flex items-center gap-2.5 p-layout border-b border-b-border'
+					className={s.logo}
 				>
 					<GanttChartSquare
 						color={COLORS.primary}
 						size={38}
 					/>
-					<span className='text-2xl font-bold relative'>
-						RED Planner
+					<span className={s.header}>
+						Deetle
 						<span className='absolute -top-1 -right-6 text-xs opacity-40 rotate-[18deg] font-normal'>
 							beta
 						</span>
@@ -38,15 +40,13 @@ export function Sidebar() {
 					))}
 				</div>
 			</div>
-			<footer className='text-xs opacity-40 font-normal text-center p-layout'>
+			<footer className={s.footer}>
 				2024 &copy; With love from{' '}
 				<a
-					href='https://www.youtube.com/c/redgroup/?sub_confirmation=1'
-					target='_blank'
-					rel='noreferrer'
+					href=''
 					className='hover:text-primary text-brand-300 transition-colors'
 				>
-					RED Group
+					Deetle
 				</a>
 				. <br /> All rights reserved.
 			</footer>

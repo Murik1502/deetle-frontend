@@ -1,0 +1,25 @@
+.username {
+    font-size: bold;
+}
+
+.email {
+    opacity: 0.4;
+    font-size: 1rem;
+}
+
+.avatar {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    .username {
+        display: none;
+    }
+
+    .email {
+        display: none;
+    }
+}
