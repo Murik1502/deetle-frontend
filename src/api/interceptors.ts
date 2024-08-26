@@ -13,14 +13,20 @@ const options: CreateAxiosDefaults = {
     withCredentials: true
 }
 
+console.log(options)
+
 const axiosClassic = axios.create(options)
 const axiosWithAuth = axios.create(options)
 
 axiosWithAuth.interceptors.request.use((config) => {
     const accessToken = getAccessToken()
 
+    console.log(accessToken)
+
     if (config?.headers && accessToken)
         config.headers.Authorization = `Bearer ${accessToken}`
+
+    console.log(config.headers)
 
     return config
 })
