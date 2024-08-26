@@ -12,7 +12,7 @@ export enum EnumTokens {
 
 export const saveTokenStorage = (accessToken: string) => {
     Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-        domain: 'localhost',
+        domain: `${process.env.NEXT_PUBLIC_API_URL}` || 'localhost',
         sameSite: 'strict',
         expires: 30
     })
