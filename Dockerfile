@@ -5,12 +5,6 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-ARG API_DOMAIN
-ENV API_DOMAIN=$API_DOMAIN
-
-ARG API_PORT
-ENV API_PORT=$API_PORT
-
 RUN npm run build
 
 
