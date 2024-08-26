@@ -19,6 +19,8 @@ export const authService = {
             'auth/login/access-token'
         )
 
+        console.log('new tokens', response.data)
+
         if (response.data.accessToken) saveTokenStorage(response.data.accessToken)
 
         return response

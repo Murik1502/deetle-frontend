@@ -12,10 +12,14 @@ export enum EnumTokens {
 
 export const saveTokenStorage = (accessToken: string) => {
     Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-        domain: `${process.env.NEXT_PUBLIC_API_URL}` || 'localhost',
-        sameSite: 'strict',
+        domain: process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}` : 'localhost',
+        sameSite: 'lax',
         expires: 30
     })
+
+    console.log("DOMAIN: ", process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}` : 'localhost')
+
+    console.log(Cookies.get(EnumTokens.ACCESS_TOKEN), Cookies)
 }
 
 export const removeFromStorage = () => {
