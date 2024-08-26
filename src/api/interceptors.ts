@@ -13,8 +13,6 @@ const options: CreateAxiosDefaults = {
     withCredentials: true
 }
 
-console.log(options)
-
 const axiosClassic = axios.create(options)
 const axiosWithAuth = axios.create(options)
 
