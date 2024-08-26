@@ -18,6 +18,8 @@ export function Auth() {
         mode: 'onChange'
     })
 
+    console.log(`http://${process.env.API_DOMAIN}:${process.env.API_PORT}/api`)
+
     const [isLoginForm, setIsLoginForm] = useState(false)
 
     const {push} = useRouter()
