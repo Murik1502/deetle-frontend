@@ -23,4 +23,4 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
