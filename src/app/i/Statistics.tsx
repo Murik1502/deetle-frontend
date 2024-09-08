@@ -10,7 +10,7 @@ export function Statistics() {
     return isLoading ? ( 
         <Loader /> 
     ) : (
-     <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-12 mt-7">
+     <div className="pb-20 grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-12 mt-7">
         {data?.statistics.length ? data.statistics.map(statistic => (
             <div
             key={statistic.label}

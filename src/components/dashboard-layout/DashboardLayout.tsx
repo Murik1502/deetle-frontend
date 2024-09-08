@@ -6,7 +6,7 @@ export default function DashboardLayout({ children }: { children: PropsWithChild
     return (
         <div className=" grid min-h-screen 2xl:grid-cols-[1.1fr_6fr] grid-cols-[0.9fr_6fr]">
             <Sidebar />
-            <main className="p-6 pb-20 overflow-x-hidden max-h-screen relative">
+            <main className="p-6 overflow-x-hidden max-h-screen relative">
                 <Header />
                 {children}
             </main>
