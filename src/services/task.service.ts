@@ -1,42 +1,33 @@
-import { axiosWithAuth } from "@/api/interceptors"
-import { ITaskResponse, TypeTaskFormState } from "@/types/task.types"
+import { ITaskResponse, TypeTaskFormState } from '@/types/task.types'
+
+import { axiosWithAuth } from '@/api/interceptors'
 
 class TaskService {
-    private BASE_URL = '/user/tasks'
+  private BASE_URL = '/user/tasks'
 
-    async getTasks() {
-        const response = await axiosWithAuth.get<ITaskResponse[]>(
-            this.BASE_URL
-        )
+  async getTasks() {
+    const response = await axiosWithAuth.get<ITaskResponse[]>(this.BASE_URL)
 
-        return response
-    }
+    return response
+  }
 
-    async createTasks(data: TypeTaskFormState) {
-        const response = await axiosWithAuth.post(
-            this.BASE_URL,
-            data
-        )
+  async createTask(data: TypeTaskFormState) {
+    const response = await axiosWithAuth.post(this.BASE_URL, data)
 
-        return response
-    }
+    return response
+  }
 
-    async updateTask(id: string, data: TypeTaskFormState) {
-        const response = await axiosWithAuth.put(
-            `${this.BASE_URL}/${id}`,
-            data
-        )
+  async updateTask(id: string, data: TypeTaskFormState) {
+    const response = await axiosWithAuth.put(`${this.BASE_URL}/${id}`, data)
 
-        return response
-    }
+    return response
+  }
 
-    async deleteTask(id: string) {
-        const response = await axiosWithAuth.delete(
-            `${this.BASE_URL}/${id}`
-        )
+  async deleteTask(id: string) {
+    const response = await axiosWithAuth.delete(`${this.BASE_URL}/${id}`)
 
-        return response
-    }
+    return response
+  }
 }
 
 export const taskService = new TaskService()
