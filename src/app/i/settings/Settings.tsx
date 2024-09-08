@@ -25,7 +25,7 @@ export function Settings() {
         })
     }
 
-    return <div>
+    return <div className={s.settings}>
         <form
         className={s.form}
         onSubmit={handleSubmit(onSubmit)}
