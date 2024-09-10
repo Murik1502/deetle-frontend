@@ -48,7 +48,7 @@ export function DatePicker({
       </button>
       {value && (
         <button
-          className='absolute top-0 right--1 opacity-30 hover:opacity-100 transition-opacity'
+          className='datepicker'
           onClick={() => onChange('')}
         >
           <X size={14} />
@@ -57,8 +57,8 @@ export function DatePicker({
       {isShow && (
         <div
           className={cn(
-            'absolute p-2.5 slide bg-sidebar z-10 shadow rounded-lg',
-            position === 'left' ? '-left-4' : '-right-4'
+            'absolute p-2.5 slide bg-sidebar z-50 shadow rounded-lg',
+            position === 'left' ? '-left-11' : '-right-4'
           )}
           style={{ top: 'calc(100% + .7rem)' }}
         >

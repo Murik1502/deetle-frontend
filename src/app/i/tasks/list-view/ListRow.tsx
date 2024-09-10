@@ -70,7 +70,7 @@ export function ListRow({ item, setItems }: IListRow) {
             <DatePicker
               onChange={onChange}
               value={value || ''}
-              position='right'
+              position='left'
             />
           )}
         />
@@ -91,14 +91,14 @@ export function ListRow({ item, setItems }: IListRow) {
           )}
         />
       </div>
-      <div>
+      <div className={styles.delete}>
         <button
           onClick={() =>
             item.id ? deleteTask(item.id) : setItems(prev => prev?.slice(0, -1))
           }
-          className='opacity-50 transition-opacity hover:opacity-100'
+          className='opacity-50 transition-opacity hover:opacity-100 right-0.5 relative'
         >
-          {isDeletePending ? <Loader size={15} /> : <Trash size={15} />}
+          {isDeletePending ? <Loader size={18} /> : <Trash size={18} />}
         </button>
       </div>
     </div>

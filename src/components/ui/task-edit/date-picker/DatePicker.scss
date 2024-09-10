@@ -7,3 +7,20 @@
   @apply m-1;
   font-size: 85%;
 }
+
+.datepicker {
+  position: absolute;
+  top: 0;
+  right: -1;
+  opacity: 30%;
+  transition: opacity 0.3s;
+}
+.datepicker:hover {
+  opacity: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .datepicker {
+    right: 0.25rem;
+  }
+}

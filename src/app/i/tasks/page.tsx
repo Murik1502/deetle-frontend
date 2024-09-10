@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function TasksPage() {
   return (
-    <div>
+    <div className='pb-80'>
       <Heading title='Tasks' />
       <TasksView />
     </div>
