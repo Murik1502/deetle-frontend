@@ -1,13 +1,18 @@
 import { DropResult } from '@hello-pangea/dnd'
+import type { Dispatch, SetStateAction } from 'react'
+
+import type { ITaskResponse } from '@/types/task.types'
 
 import { FILTERS } from '../columns.data'
 
-import { useTasks } from './useTasks'
 import { useUpdateTask } from './useUpdateTask'
 
-export function useTaskDnd() {
+interface ITaskDnd {
+  setItems: Dispatch<SetStateAction<ITaskResponse[] | undefined>>
+}
+
+export function useTaskDnd({ setItems }: ITaskDnd) {
   const { updateTask } = useUpdateTask()
-  const { items, setItems } = useTasks()
 
   const onDragEnd = (result: DropResult) => {
     if (!result.destination) return
