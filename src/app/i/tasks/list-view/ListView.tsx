@@ -10,31 +10,31 @@ import { ListRowParent } from './ListRowParent'
 import styles from './ListView.module.scss'
 
 export function ListView() {
-	const { items, setItems } = useTasks()
-	const { onDragEnd } = useTaskDnd()
+  const { items, setItems } = useTasks()
+  const { onDragEnd } = useTaskDnd()
 
-	return (
-		<DragDropContext onDragEnd={onDragEnd}>
-			<div className={styles.table}>
-				<div className={styles.header}>
-					<div>Task name</div>
-					<div>Due date</div>
-					<div>Priority</div>
-					<div></div>
-				</div>
+  return (
+    <DragDropContext onDragEnd={onDragEnd}>
+      <div className={styles.table}>
+        <div className={styles.header}>
+          <div>Task name</div>
+          <div>Due date</div>
+          <div>Priority</div>
+          <div></div>
+        </div>
 
-				<div className={styles.parentsWrapper}>
-					{COLUMNS.map(column => (
-						<ListRowParent
-							items={items}
-							label={column.label}
-							value={column.value}
-							setItems={setItems}
-							key={column.value}
-						/>
-					))}
-				</div>
-			</div>
-		</DragDropContext>
-	)
+        <div className={styles.parentsWrapper}>
+          {COLUMNS.map(column => (
+            <ListRowParent
+              items={items}
+              label={column.label}
+              value={column.value}
+              setItems={setItems}
+              key={column.value}
+            />
+          ))}
+        </div>
+      </div>
+    </DragDropContext>
+  )
 }
