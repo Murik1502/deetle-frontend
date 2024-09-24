@@ -3,7 +3,7 @@
 import clsx from 'clsx'
 import { Kanban, ListTodo } from 'lucide-react'
 
-import type { TypeView } from './TasksView.tsx'
+import type { TypeView } from './TasksView'
 
 interface ISwitcherView {
   type: TypeView
